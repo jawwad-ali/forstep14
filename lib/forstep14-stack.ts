@@ -7,7 +7,7 @@ export class Forstep14Stack extends cdk.Stack {
 
     // The code that defines your stack goes here
     const todosTable = new ddb.Table(this, 'CDKTodosTable', {
-      tableName: "Step14Prac",
+      tableName: "Step14Practice",
       billingMode: ddb.BillingMode.PAY_PER_REQUEST,
       partitionKey: {
         name: 'id',
