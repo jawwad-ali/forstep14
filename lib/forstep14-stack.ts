@@ -1,6 +1,5 @@
 import * as cdk from '@aws-cdk/core';
 import * as ddb from '@aws-cdk/aws-dynamodb';
-import { BillingMode } from '@aws-cdk/aws-dynamodb';
 
 export class Forstep14Stack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -9,7 +8,7 @@ export class Forstep14Stack extends cdk.Stack {
     // The code that defines your stack goes here
     const todosTable = new ddb.Table(this, 'CDKTodosTable', {
       tableName: "Step14Prac",
-      billingMode: BillingMode.PAY_PER_REQUEST,
+      billingMode: ddb.BillingMode.PAY_PER_REQUEST,
       partitionKey: {
         name: 'id',
         type: ddb.AttributeType.STRING,
